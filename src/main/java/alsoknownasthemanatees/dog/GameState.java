@@ -11,6 +11,6 @@ public abstract class GameState {
 		this.component = component;
 	}
 	
-	public abstract void paint(Graphics2D g);
+	public abstract void paint(double dt, Graphics2D g);
 	
 }
