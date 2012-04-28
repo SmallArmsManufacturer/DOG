@@ -3,6 +3,7 @@ package alsoknownasthemanatees.dog;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Graphics2D;
+import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import javax.imageio.ImageIO;
@@ -33,6 +34,11 @@ public class SplashScreen extends GameState {
 		elapsedTime += dt;
 		if (Math.floor(elapsedTime) % 2 == 0)
 			g.drawImage(pressAnyKey, component.getWidth() / 2 - pressAnyKey.getWidth() / 2, component.getHeight() / 2 + logo.getHeight() / 2, null);
+	}
+	
+	@Override
+	public void keyPressed(KeyEvent ke) {
+		getStack().push(new MainGame(component));
 	}
 	
 }
